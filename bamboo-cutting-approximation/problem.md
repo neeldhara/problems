@@ -24,7 +24,7 @@ The Reduce-Fastest($x$) algorithm works as follows: cut next the fastest growing
 
 ---
 
-## Part A (1)
+## Part A
 
 Suppose, for contradiction, an algorithm $\mathcal{A}$ guarantees that **every bamboo always has height at most $H_{\mathrm{MAX}}$** for some $H_{\mathrm{MAX}} < H$.
 
@@ -46,7 +46,7 @@ Let $T$ be the **total height** of the garden — the sum of the current heights
 
 ---
 
-## Part B (1)
+## Part B
 
 Consider our running example $h_1 = 4, h_2 = 3, h_3 = 1$, so $H = 8$ and $n = 3$. Suppose someone claims an algorithm $\mathcal{A}$ keeps every bamboo at height $\leq 7$ forever; that is, $H_{\mathrm{MAX}} = H - 1 = 7$.
 
@@ -73,7 +73,7 @@ What is the smallest value of $X$ for which the statement above is true?
 
 ---
 
-## Part C (1)
+## Part C
 
 In general, suppose an algorithm claims to keep every bamboo below some threshold $H_{\mathrm{MAX}} < H$. After how many days is this claim forced into a contradiction?
 
@@ -96,7 +96,7 @@ In general, suppose an algorithm claims to keep every bamboo below some threshol
 
 ---
 
-## Part D (1)
+## Part D
 
 Consider the greedy algorithm **Reduce-Fastest(2)**, so the threshold for being "eligible to cut" is $2H$. For our running example ($h_1 = 4, h_2 = 3, h_3 = 1$, $H = 8$), after how many days does the first bamboo first become eligible to be cut?
 
@@ -111,7 +111,7 @@ Consider the greedy algorithm **Reduce-Fastest(2)**, so the threshold for being 
 
 ---
 
-## Part E (1)
+## Part E
 
 You might hope Reduce-Fastest(2) trivially caps every bamboo at $2H$: the moment a bamboo reaches $2H$, we cut it. **Why does this argument fail?**
 
@@ -126,7 +126,7 @@ You might hope Reduce-Fastest(2) trivially caps every bamboo at $2H$: the moment
 
 ---
 
-## Part F (1)
+## Part F
 
 Assume that if there are two or more bamboos with the same fastest growth rate among the bamboos with the current height at least $x \cdot H$, then Reduce-Fastest chooses for trimming the bamboo with the smallest index.
 
@@ -145,7 +145,7 @@ What is the tightest upper bound on the **maximum height bamboo $1$ ever reaches
 
 ---
 
-## Part G (1)
+## Part G
 
 Now for the slower bamboos $b_i$ with $i \geq 2$. Assume (for contradiction) that **$b_i$ reaches height at least $C \cdot H$** for some constant $C \geq x + 1$. We'll derive an upper bound on $C$.
 
@@ -167,7 +167,7 @@ Split heights into two regions: the **lower region** $[0, xH)$ and the **upper r
 
 ---
 
-## Part H (1)
+## Part H
 
 Call the duration above $t$. On each of these $t$ days, $b_i$ is eligible to be cut (it's in the upper region), but is **not** cut. So on each of those days, Reduce-Fastest picks some **other** bamboo instead — specifically, a faster one that is also in the upper region. Since rates are sorted $h_1 \geq \cdots \geq h_n$, any such "blocker" must be some $b_j$ with $j < i$.
 
@@ -187,7 +187,7 @@ Fix a single $b_j$ with $j < i$. After $b_j$ is cut, it restarts at height $0$ a
 
 ---
 
-## Part I (1)
+## Part I
 
 Now combine. Let $\alpha(j)$ denote your answer to the previous question (this is potentially independent of $j$). 
 
@@ -220,7 +220,7 @@ Divide by $t$ and substitute for $t$ from your previous answer and $f_j = \lceil
 
 ---
 
-## Part J (1)
+## Part J
 
 We get to choose $x$, so pick the one that gives you the best approximation ratio. What do you arrive at?
 
@@ -233,27 +233,3 @@ We get to choose $x$, so pick the one that gives you the best approximation rati
 > [!solution]
 > Let $f(x) = 2 + (x - 1) + \dfrac{1}{x - 1}$ for $x > 1$. Its derivative is $f'(x) = 1 - \dfrac{1}{(x - 1)^2}$, which vanishes at $x = 2$. At the minimum: $f(2) = 2 + 1 + 1 = 4$. So the tightest bound provable by this argument is $C < 4$, attained at $x = 2$. This means **Reduce-Fastest(2) keeps every slower bamboo $b_i$ ($i \geq 2$) below height $4H$.** Combined with Part F (which gave $\leq 3H$ for $b_1$), no bamboo ever reaches height $4H$.
 
----
-
-## Part K (2)
-
-We have two halves:
-
-- **Lower bound (Part C):** $\mathrm{OPT} \geq H$.
-- **Upper bound (Parts F + J):** Reduce-Fastest(2) keeps every bamboo below $4H$.
-
-**What approximation ratio does Reduce-Fastest(2) achieve?**
-
-## Options
-- [ ] $2$
-- [x] $4$
-- [ ] $8$
-- [ ] $H$
-
-> [!solution]
-> $$\frac{\text{Reduce-Fastest(2)'s max height}}{\mathrm{OPT}} < \frac{4H}{H} = 4.$$
-> So **Reduce-Fastest(2) is a 4-approximation algorithm** for discrete Bamboo Garden Trimming. This is Theorem 2.1 of the SOFSEM 2017 paper by Gąsieniec, Klasing, Levcopoulos, Lingas, Min, and Radzik.
-
-> [!feedback]
-> Nicely done! You've traced the full 4-approximation proof: a clever "balance" argument (total height grows by $H - H_{\mathrm{MAX}}$ per day, but is capped at $n \cdot H_{\mathrm{MAX}}$) gives the lower bound $\mathrm{OPT} \geq H$; a careful block-counting argument (how long $b_i$ sits in the upper region, how often each faster $b_j$ can block) gives the upper bound of $4H$ for Reduce-Fastest(2). The paper goes on to achieve a stronger **2-approximation** via a reduction to the classical **Pinwheel scheduling** problem — a nice follow-up read once this one has landed.
-	

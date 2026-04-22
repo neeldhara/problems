@@ -68,7 +68,7 @@ Suppose Lata finds a maximum matching $M$ the Candyland graph and places a polic
 - [x] Yes
 - [ ] No
 
-## Part F
+## Part F (2)
 
 Suppose we are interested in the smallest number of policewomen that Lata needs to deploy to keep Candyland safe forever. Then:
 
