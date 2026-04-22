@@ -13,7 +13,7 @@ For weighted vertex cover, each edge $(v_i,v_j)$ contributes a constraint $x_i +
 
 ![Graph with 5 vertices and 6 edges showing vertex weights and edge labels](graph.png)
 
-## Part A (1)
+## Part A
 
 If row $i$ in matrix $A$ corresponds to the constraint created for edge $e_i$, what would be the correct values of row 5?
 
@@ -27,7 +27,7 @@ If row $i$ in matrix $A$ corresponds to the constraint created for edge $e_i$, w
 > Correct option: $0,1,0,0,1$
 
 
-## Part B (2)
+## Part B
 
 Recall the dual formulation:
 
@@ -52,5 +52,4 @@ Return $C$.
 What is the output of the prima-dual algorithm when applied to the graph in this example?
 
 ## Answer
-
 Foo Bar
