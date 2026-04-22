@@ -51,3 +51,6 @@ Return $C$.
 
 What is the output of the prima-dual algorithm when applied to the graph in this example?
 
+## Answer
+
+Foo Bar
