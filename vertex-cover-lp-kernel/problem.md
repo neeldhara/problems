@@ -41,9 +41,8 @@ Compute the optimum of $\mathrm{LPVC}(G)$ when $G$ is (i) the triangle $K_3$ and
 ## Part B (1)
 
 Let $G$ be the **paw graph**: a triangle on $\{a, b, c\}$ together with a pendant vertex $d$ adjacent only to $a$ (so $E(G) = \{ab, bc, ca, ad\}$). Suppose the LP solver returns the optimal solution
-$$
-(x_a, x_b, x_c, x_d) = \left(1, \tfrac{1}{2}, \tfrac{1}{2}, 0\right).
-$$
+
+$$(x_a, x_b, x_c, x_d) = \left(1, \tfrac{1}{2}, \tfrac{1}{2}, 0\right).$$
 Identify $V_0$, $V_{\frac{1}{2}}$, and $V_1$.
 
 ## Options
