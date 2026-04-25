@@ -12,10 +12,9 @@ We will dissect a parameterized reduction from $\mathrm{Clique}$ that establishe
 
 > $\mathrm{BVS}$ is W[1]-hard parameterized by $k$.
 
-**Construction.** Given a $\mathrm{Clique}$ instance $(G, k)$ with $n = |V(G)|$ and $m = |E(G)|$, assume $n \geqslant 4k^2$ (achievable by adding isolated vertices). Set
-$$
-\ell := n + m - 2\!\left(k + \binom{k}{2}\right) \;\;\geqslant\;\; 0.
-$$
+**Construction.** Given a $\mathrm{Clique}$ instance $(G, k)$ with $n = |V(G)|$ and $m = |E(G)|$, assume $n \geqslant 4k^2$ (achievable by adding isolated vertices). Set 
+
+$$\ell := n + m - 2\!\left(k + \binom{k}{2}\right) \;\;\geqslant\;\; 0.$$
 Construct a graph $G'$ as follows.
 1. The original vertex set $V(G)$ is included in $G'$ and made into a *clique*.
 2. For every edge $e = uv \in E(G)$, introduce a new vertex $w_e$ adjacent only to $u$ and $v$ in $G'$.
