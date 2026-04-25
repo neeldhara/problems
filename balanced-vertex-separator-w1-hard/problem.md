@@ -124,9 +124,8 @@ What, if anything, is wrong with this reduction?
 A different student tries the same trick from a different W[1]-hard source: $\mathrm{Induced\ Matching}$ on $k$ vertices (assume $k$ is even). An instance is a graph $G$ with integer $k$, and we ask for $S \subseteq V(G)$ of size $k$ such that $G[S]$ is a perfect matching on $S$ — i.e., $S$ is the vertex set of $k/2$ pairwise non-adjacent edges of $G$, with no further edges among them. Assume that this problem is hard parameterized by $k$.
 
 The student mimics the reduction from he clique *exactly* — $V(G)$ becomes a clique in $G'$, every edge $e$ of $G$ contributes a vertex $w_e$ adjacent only to its endpoints, and an auxiliary clique $K$ of size $\ell'$ is added as a separate component. Since the snipped matching contributes $k/2$ edges (as opposed to $\binom{k}{2}$ in the clique case), they pick
-$$
-\ell' \;:=\; n + m - 3k
-$$
+
+$$\ell' \;:=\; n + m - 3k$$
 (non-negative for $n$ large enough — pad with isolated vertices). 
 
 The student concludes: $\mathrm{BVS}$ is W[1]-hard. Which of the following is true?
